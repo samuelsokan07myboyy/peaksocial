@@ -10,6 +10,8 @@
         .header { text-align: center; border-bottom: 2px solid #eaeaea; padding-bottom: 20px; margin-bottom: 30px; }
         a { color: #ec4899; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        ul { margin-top: 0; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -23,25 +25,56 @@
     <h2>1. Comprehensive Data Collection</h2>
     <p>We collect extensive data to provide our social and tracking services. This includes:</p>
     <ul>
-        <li><strong>Identity & Contact Data:</strong> Your registered email address, phone number, chosen username, encrypted password hashes, and date of birth.</li>
-        <li><strong>Biometric & Health Data:</strong> Your height, weight, sex, age, and activity level.</li>
-        <li><strong>Nutritional Data:</strong> Detailed logs of what you eat, meal times, serving sizes, and the exact breakdowns of carbohydrates, proteins, fats, and total calories consumed.</li>
+        <li><strong>Identity & Contact Data:</strong> Your registered email address, phone number (used for SMS OTP verification), chosen username, encrypted password hashes, and date of birth.</li>
+        <li><strong>Biometric & Health Data:</strong> Your height, weight, sex, age, and activity level. This data is actively processed to compute your <a href="https://www.cdc.gov/bmi/adult-calculator/index.html">Body Mass Index (BMI)</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/">Basal Metabolic Rate (BMR)</a>.</li>
+        <li><strong>Nutritional Data:</strong> Detailed logs of what you eat, meal times, serving sizes, and the exact breakdowns of carbohydrates, proteins, fats, and total calories consumed. These macros are cross-referenced with public databases like the <a href="https://fdc.nal.usda.gov/">USDA FoodData Central</a>.</li>
         <li><strong>Workout Data:</strong> Information on every exercise you log, including specific movements, set counts, repetition counts, rest timers, weight lifted, and workout duration.</li>
         <li><strong>Geolocation Data:</strong> When utilizing the "Outdoor Tracker" feature, we access your device's GPS hardware to record your longitude, latitude, speed, and elevation over time. This data is used solely to map your running or cycling routes. We do not track your location in the background when the tracker is disabled.</li>
         <li><strong>Social & Media Data:</strong> All photos and images uploaded as avatars or post attachments. All text published in posts, comments, and direct messages (DMs).</li>
+        <li><strong>Device & Telemetry Data:</strong> Your device model, Operating System (iOS/Android) version, IP address, timezone, local storage data (via <a href="https://react-native-async-storage.github.io/async-storage/">AsyncStorage</a>), and crash analytics.</li>
     </ul>
 
-    <h2>2. Data Storage and Third-Party Subprocessors</h2>
-    <p><strong>We do not sell your personal data to data brokers or advertising networks.</strong> However, to operate the App globally, we share data with secure third-party infrastructure providers such as Supabase (database) and Expo (push notifications).</p>
-
-    <h2>3. Data Retention, Export, and Deletion</h2>
+    <h2>2. Processing and Usage of Data</h2>
+    <p>Your data is processed directly to facilitate app functionality:</p>
     <ul>
-        <li><strong>Retention:</strong> We store your data indefinitely as long as your account remains active.</li>
-        <li><strong>Deletion (Right to be Forgotten):</strong> You have the absolute right to delete your account. Using the "Delete Account" button in settings triggers a cascading deletion process in our database. This permanently erases your identity, biometric data, workouts, posts, and social connections.</li>
+        <li><strong>Algorithms & Calculators:</strong> We apply mathematical formulas (e.g., Mifflin-St Jeor) to your biometric data to generate fitness insights and macro targets.</li>
+        <li><strong>Social Graphing:</strong> Your followings, followers, and engagement metrics are used to construct your personalized feed.</li>
+        <li><strong>Communication:</strong> We utilize your contact data to send critical transactional emails (like password resets) via our partner <a href="https://resend.com/">Resend</a>, and Push Notifications via <a href="https://expo.dev/">Expo Push Services</a>.</li>
     </ul>
 
-    <h2>4. Contact Us</h2>
-    <p>For any privacy-related concerns, please contact us at <a href="mailto:peaksocialsupport@gmail.com">peaksocialsupport@gmail.com</a>.</p>
+    <h2>3. Data Storage and Third-Party Subprocessors</h2>
+    <p><strong>We do not sell your personal data to data brokers or advertising networks.</strong> However, to operate the App globally, we share data with secure third-party infrastructure providers:</p>
+    <ul>
+        <li><strong><a href="https://supabase.com/">Supabase:</a></strong> Acts as our primary backend database and authentication provider. Your user profiles, posts, messages, and fitness data are securely stored in PostgreSQL databases hosted by Supabase. Images are stored in Supabase Storage buckets.</li>
+        <li><strong><a href="https://expo.dev/">Expo:</a></strong> Handles over-the-air updates and device push notifications.</li>
+        <li><strong><a href="https://resend.com/">Resend:</a></strong> Our SMTP provider used for securely delivering OTPs and system emails.</li>
+        <li><strong>Nutrition APIs:</strong> When you search for foods, your search queries may be routed through third-party food databases (e.g., USDA APIs) to retrieve macro information.</li>
+    </ul>
+
+    <h2>4. Visibility and Privacy Settings</h2>
+    <ul>
+        <li><strong>Public by Default:</strong> Unless otherwise configured, your profile, workout logs, posts, and followers are visible to the entire Peak Social community.</li>
+        <li><strong>Private Accounts:</strong> You may toggle your account to "Private" in the settings. This restricts access to your posts and detailed fitness logs strictly to users whom you have manually approved as followers. Your basic profile (username, bio, avatar) remains searchable.</li>
+        <li><strong>Direct Messages:</strong> DMs are private between the sender and recipient, though they are stored on our servers to synchronize across your devices. They are not end-to-end encrypted.</li>
+    </ul>
+
+    <h2>5. Data Retention, Export, and Deletion</h2>
+    <ul>
+        <li><strong>Retention:</strong> We store your data indefinitely as long as your account remains active, ensuring your fitness history is always accessible.</li>
+        <li><strong>Export:</strong> You may request a raw data export of your information by contacting our support team.</li>
+        <li><strong>Deletion (Right to be Forgotten):</strong> You have the absolute right to delete your account. Using the "Delete Account" button in settings triggers a cascading deletion process in our PostgreSQL database. This permanently erases your identity, biometric data, workouts, posts, and social connections from active production servers. Residual data may exist in secure, encrypted backups for up to 30 days before being fully overwritten.</li>
+    </ul>
+
+    <h2>6. Security Measures</h2>
+    <p>Peak Social employs <a href="https://supabase.com/docs/guides/auth/row-level-security">Row Level Security (RLS)</a> policies within our database to ensure users can only modify their own data. All API communications are secured via Transport Layer Security (TLS/HTTPS). Passwords and OTP tokens are cryptographically hashed before storage. Despite these measures, internet transmissions are never entirely secure, and you use the App at your own risk.</p>
+
+    <h2>7. California Privacy Rights (CCPA) and GDPR</h2>
+    <p>If you are a resident of California or the European Union, you have specific rights regarding your personal information under the <a href="https://oag.ca.gov/privacy/ccpa">California Consumer Privacy Act (CCPA)</a> and the <a href="https://gdpr.eu/">General Data Protection Regulation (GDPR)</a>. This includes the right to access, rectify, or erase your data, and the right to object to processing. You may exercise these rights directly within the App's settings or by emailing our privacy officers.</p>
+
+    <h2>8. Changes to this Policy</h2>
+    <p>We may modify this Privacy Policy periodically. If we make material changes, we will notify you via email or a prominent notice within the App prior to the changes taking effect. Continued use of the App constitutes acceptance of the revised policy.</p>
+
+    <p style="margin-top: 30px;">For any privacy-related concerns, please contact us at <a href="mailto:peaksocialsupport@gmail.com">peaksocialsupport@gmail.com</a>.</p>
     
     <p style="text-align: center; margin-top: 40px;"><a href="index.html">&larr; Back to Support</a></p>
 </body>
