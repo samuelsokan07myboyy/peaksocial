@@ -6,25 +6,21 @@
   <title>Privacy Policy - Peak Social</title>
   <style>
     :root {
-      --bg: #eff6ff;
-      --card-bg: #ffffff;
-      --card-border: #dbeafe;
+      --bg: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
+      --border: #e2e8f0;
+      --card-bg: #f8fafc;
       --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --tag-bg: #dbeafe;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #020617;
-        --card-bg: #0f172a;
-        --card-border: #1e293b;
+        --bg: #0b0f17;
         --text: #f8fafc;
         --muted: #94a3b8;
-        --accent: #38bdf8;
-        --accent-hover: #7dd3fc;
-        --tag-bg: #1e293b;
+        --border: #1e293b;
+        --card-bg: #111827;
+        --accent: #3b82f6;
       }
     }
     body {
@@ -36,98 +32,60 @@
       padding: 40px 20px 80px;
     }
     .container {
-      max-width: 800px;
+      max-width: 780px;
       margin: 0 auto;
     }
-    .header {
-      text-align: center;
-      padding-bottom: 24px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .pill {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      background: var(--tag-bg);
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 800;
-      margin: 0 0 8px 0;
+      margin-bottom: 4px;
       letter-spacing: -0.02em;
     }
     .effective-date {
       color: var(--muted);
       font-size: 0.95rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 18px;
+      margin-bottom: 32px;
     }
     h2 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 14px;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
     }
-    p {
-      margin: 0 0 12px 0;
-    }
-    p:last-child {
-      margin-bottom: 0;
+    p, li {
+      font-size: 0.98rem;
+      color: var(--text);
     }
     ul {
-      margin: 0;
       padding-left: 20px;
+      margin: 12px 0;
     }
     li {
       margin-bottom: 10px;
     }
-    li:last-child {
-      margin-bottom: 0;
-    }
-    strong {
-      color: var(--text);
-    }
     a {
       color: var(--accent);
-      text-decoration: underline;
+      text-decoration: none;
     }
     a:hover {
-      color: var(--accent-hover);
+      text-decoration: underline;
     }
-    .eula-card {
+    .highlight-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .eula-card h3 {
-      margin: 0;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 24px 0;
     }
     .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.9rem;
     }
     .footer a {
       margin: 0 8px;
@@ -136,95 +94,87 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <div class="pill">Legal Documentation</div>
-      <h1>Privacy Policy</h1>
-      <div class="effective-date"><strong>Effective Date:</strong> August 2026</div>
+    <h1>Privacy Policy</h1>
+    <div class="effective-date">Effective Date: August 2026</div>
+
+    <p>
+      At <strong>Peak Social</strong>, transparency is paramount. We understand that your fitness and health data is deeply personal. This Privacy Policy exhaustively details exactly what information we collect, how we process it, where it is stored, and who it is shared with. By using Peak Social, you explicitly consent to the data practices described in this document.
+    </p>
+
+    <h2>1. Comprehensive Data Collection</h2>
+    <p>We collect extensive data to provide our social and tracking services. This includes:</p>
+    <ul>
+      <li><strong>Identity & Contact Data:</strong> Your registered email address, phone number (used for SMS OTP verification), chosen username, encrypted password hashes, and date of birth.</li>
+      <li><strong>Biometric & Health Data:</strong> Your height, weight, sex, age, and activity level. This data is actively processed to compute your <a href="https://www.cdc.gov/bmi/adult-calculator/index.html" target="_blank" rel="noopener">Body Mass Index (BMI)</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener">Basal Metabolic Rate (BMR)</a>.</li>
+      <li><strong>Nutritional Data:</strong> Detailed logs of what you eat, meal times, serving sizes, and the exact breakdowns of carbohydrates, proteins, fats, and total calories consumed. These macros are cross-referenced with public databases like the <a href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener">USDA FoodData Central</a>.</li>
+      <li><strong>Workout Data:</strong> Information on every exercise you log, including specific movements, set counts, repetition counts, rest timers, weight lifted, and workout duration.</li>
+      <li><strong>Geolocation Data:</strong> When utilizing the "Outdoor Tracker" feature, we access your device's GPS hardware to record your longitude, latitude, speed, and elevation over time. This data is used solely to map your running or cycling routes. We do not track your location in the background when the tracker is disabled.</li>
+      <li><strong>Social & Media Data:</strong> All photos and images uploaded as avatars or post attachments. All text published in posts, comments, and direct messages (DMs).</li>
+      <li><strong>Device & Telemetry Data:</strong> Your device model, Operating System (iOS/Android) version, IP address, timezone, local storage data (via <a href="https://react-native-async-storage.github.io/async-storage/" target="_blank" rel="noopener">AsyncStorage</a>), and crash analytics.</li>
+    </ul>
+
+    <h2>2. Processing and Usage of Data</h2>
+    <p>Your data is processed directly to facilitate app functionality:</p>
+    <ul>
+      <li><strong>Algorithms & Calculators:</strong> We apply mathematical formulas (e.g., Mifflin-St Jeor) to your biometric data to generate fitness insights and macro targets.</li>
+      <li><strong>Social Graphing:</strong> Your followings, followers, and engagement metrics are used to construct your personalized feed.</li>
+      <li><strong>Communication:</strong> We utilize your contact data to send critical transactional emails (like password resets) via our partner <a href="https://resend.com/" target="_blank" rel="noopener">Resend</a>, and Push Notifications via <a href="https://expo.dev/" target="_blank" rel="noopener">Expo Push Services</a>.</li>
+    </ul>
+
+    <h2>3. Data Storage and Third-Party Subprocessors</h2>
+    <p><strong>We do not sell your personal data to data brokers or advertising networks.</strong> However, to operate the App globally, we share data with secure third-party infrastructure providers:</p>
+    <ul>
+      <li><strong><a href="https://supabase.com/" target="_blank" rel="noopener">Supabase:</a></strong> Acts as our primary backend database and authentication provider. Your user profiles, posts, messages, and fitness data are securely stored in PostgreSQL databases hosted by Supabase. Images are stored in Supabase Storage buckets.</li>
+      <li><strong><a href="https://expo.dev/" target="_blank" rel="noopener">Expo:</a></strong> Handles over-the-air updates and device push notifications.</li>
+      <li><strong><a href="https://resend.com/" target="_blank" rel="noopener">Resend:</a></strong> Our SMTP provider used for securely delivering OTPs and system emails.</li>
+      <li><strong>Nutrition APIs:</strong> When you search for foods, your search queries may be routed through third-party food databases (e.g., USDA APIs) to retrieve macro information.</li>
+    </ul>
+
+    <h2>4. Visibility and Privacy Settings</h2>
+    <ul>
+      <li><strong>Public by Default:</strong> Unless otherwise configured, your profile, workout logs, posts, and followers are visible to the entire Peak Social community.</li>
+      <li><strong>Private Accounts:</strong> You may toggle your account to "Private" in the settings. This restricts access to your posts and detailed fitness logs strictly to users whom you have manually approved as followers. Your basic profile (username, bio, avatar) remains searchable.</li>
+      <li><strong>Direct Messages:</strong> DMs are private between the sender and recipient, though they are stored on our servers to synchronize across your devices. They are not end-to-end encrypted.</li>
+    </ul>
+
+    <h2>5. Data Retention, Export, and Deletion</h2>
+    <ul>
+      <li><strong>Retention:</strong> We store your data indefinitely as long as your account remains active, ensuring your fitness history is always accessible.</li>
+      <li><strong>Export:</strong> You may request a raw data export of your information by contacting our support team.</li>
+      <li><strong>Deletion (Right to be Forgotten):</strong> You have the absolute right to delete your account. Using the "Delete Account" button in settings triggers a cascading deletion process in our PostgreSQL database. This permanently erases your identity, biometric data, workouts, posts, and social connections from active production servers. Residual data may exist in secure, encrypted backups for up to 30 days before being fully overwritten.</li>
+    </ul>
+
+    <h2>6. Security Measures</h2>
+    <p>
+      Peak Social employs <a href="https://supabase.com/docs/guides/auth/row-level-security" target="_blank" rel="noopener">Row Level Security (RLS)</a> policies within our database to ensure users can only modify their own data. All API communications are secured via Transport Layer Security (TLS/HTTPS). Passwords and OTP tokens are cryptographically hashed before storage. Despite these measures, internet transmissions are never entirely secure, and you use the App at your own risk.
+    </p>
+
+    <h2>7. California Privacy Rights (CCPA) and GDPR</h2>
+    <p>
+      If you are a resident of California or the European Union, you have specific rights regarding your personal information under the <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener">California Consumer Privacy Act (CCPA)</a> and the <a href="https://gdpr.eu/" target="_blank" rel="noopener">General Data Protection Regulation (GDPR)</a>. This includes the right to access, rectify, or erase your data, and the right to object to processing. You may exercise these rights directly within the App's settings or by emailing our privacy officers.
+    </p>
+
+    <h2>8. Changes to this Policy</h2>
+    <p>
+      We may modify this Privacy Policy periodically. If we make material changes, we will notify you via email or a prominent notice within the App prior to the changes taking effect. Continued use of the App constitutes acceptance of the revised policy.
+    </p>
+
+    <div class="highlight-card">
+      <strong>Apple End User License Agreement (EULA):</strong> Peak Social is licensed under standard Apple App Store terms. You can read the complete license agreement at <a href="eula.html">Apple App Store EULA</a>.
     </div>
 
-    <div class="card">
-      <p>At Peak Social, transparency is paramount. We understand that your fitness and health data is deeply personal. This Privacy Policy exhaustively details exactly what information we collect, how we process it, where it is stored, and who it is shared with. By using Peak Social, you explicitly consent to the data practices described in this document.</p>
-    </div>
-
-    <div class="card">
-      <h2>1. Comprehensive Data Collection</h2>
-      <p>We collect extensive data to provide our social and tracking services. This includes:</p>
-      <ul>
-        <li><strong>Identity & Contact Data:</strong> Your registered email address, phone number (used for SMS OTP verification), chosen username, encrypted password hashes, and date of birth.</li>
-        <li><strong>Biometric & Health Data:</strong> Your height, weight, sex, age, and activity level. This data is actively processed to compute your <a href="https://www.cdc.gov/bmi/adult-calculator/index.html" target="_blank" rel="noopener">Body Mass Index (BMI)</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener">Basal Metabolic Rate (BMR)</a>.</li>
-        <li><strong>Nutritional Data:</strong> Detailed logs of what you eat, meal times, serving sizes, and the exact breakdowns of carbohydrates, proteins, fats, and total calories consumed. These macros are cross-referenced with public databases like the <a href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener">USDA FoodData Central</a>.</li>
-        <li><strong>Workout Data:</strong> Information on every exercise you log, including specific movements, set counts, repetition counts, rest timers, weight lifted, and workout duration.</li>
-        <li><strong>Geolocation Data:</strong> When utilizing the "Outdoor Tracker" feature, we access your device's GPS hardware to record your longitude, latitude, speed, and elevation over time. This data is used solely to map your running or cycling routes. We do not track your location in the background when the tracker is disabled.</li>
-        <li><strong>Social & Media Data:</strong> All photos and images uploaded as avatars or post attachments. All text published in posts, comments, and direct messages (DMs).</li>
-        <li><strong>Device & Telemetry Data:</strong> Your device model, Operating System (iOS/Android) version, IP address, timezone, local storage data (via <a href="https://react-native-async-storage.github.io/async-storage/" target="_blank" rel="noopener">AsyncStorage</a>), and crash analytics.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>2. Processing and Usage of Data</h2>
-      <p>Your data is processed directly to facilitate app functionality:</p>
-      <ul>
-        <li><strong>Algorithms & Calculators:</strong> We apply mathematical formulas (e.g., Mifflin-St Jeor) to your biometric data to generate fitness insights and macro targets.</li>
-        <li><strong>Social Graphing:</strong> Your followings, followers, and engagement metrics are used to construct your personalized feed.</li>
-        <li><strong>Communication:</strong> We utilize your contact data to send critical transactional emails (like password resets) via our partner <a href="https://resend.com/" target="_blank" rel="noopener">Resend</a>, and Push Notifications via <a href="https://expo.dev/" target="_blank" rel="noopener">Expo Push Services</a>.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>3. Data Storage and Third-Party Subprocessors</h2>
-      <p><strong>We do not sell your personal data to data brokers or advertising networks.</strong> However, to operate the App globally, we share data with secure third-party infrastructure providers:</p>
-      <ul>
-        <li><strong><a href="https://supabase.com/" target="_blank" rel="noopener">Supabase:</a></strong> Acts as our primary backend database and authentication provider. Your user profiles, posts, messages, and fitness data are securely stored in PostgreSQL databases hosted by Supabase. Images are stored in Supabase Storage buckets.</li>
-        <li><strong><a href="https://expo.dev/" target="_blank" rel="noopener">Expo:</a></strong> Handles over-the-air updates and device push notifications.</li>
-        <li><strong><a href="https://resend.com/" target="_blank" rel="noopener">Resend:</a></strong> Our SMTP provider used for securely delivering OTPs and system emails.</li>
-        <li><strong>Nutrition APIs:</strong> When you search for foods, your search queries may be routed through third-party food databases (e.g., USDA APIs) to retrieve macro information.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>4. Visibility and Privacy Settings</h2>
-      <ul>
-        <li><strong>Public by Default:</strong> Unless otherwise configured, your profile, workout logs, posts, and followers are visible to the entire Peak Social community.</li>
-        <li><strong>Private Accounts:</strong> You may toggle your account to "Private" in the settings. This restricts access to your posts and detailed fitness logs strictly to users whom you have manually approved as followers. Your basic profile (username, bio, avatar) remains searchable.</li>
-        <li><strong>Direct Messages:</strong> DMs are private between the sender and recipient, though they are stored on our servers to synchronize across your devices. They are not end-to-end encrypted.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>5. Data Retention, Export, and Deletion</h2>
-      <ul>
-        <li><strong>Retention:</strong> We store your data indefinitely as long as your account remains active, ensuring your fitness history is always accessible.</li>
-        <li><strong>Export:</strong> You may request a raw data export of your information by contacting our support team.</li>
-        <li><strong>Deletion (Right to be Forgotten):</strong> You have the absolute right to delete your account. Using the "Delete Account" button in settings triggers a cascading deletion process in our PostgreSQL database. This permanently erases your identity, biometric data, workouts, posts, and social connections from active production servers. Residual data may exist in secure, encrypted backups for up to 30 days before being fully overwritten.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>6. Security Measures</h2>
-      <p>Peak Social employs <a href="https://supabase.com/docs/guides/auth/row-level-security" target="_blank" rel="noopener">Row Level Security (RLS)</a> policies within our database to ensure users can only modify their own data. All API communications are secured via Transport Layer Security (TLS/HTTPS). Passwords and OTP tokens are cryptographically hashed before storage. Despite these measures, internet transmissions are never entirely secure, and you use the App at your own risk.</p>
-    </div>
-
-    <div class="card">
-      <h2>7. California Privacy Rights (CCPA) and GDPR</h2>
-      <p>If you are a resident of California or the European Union, you have specific rights regarding your personal information under the <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener">California Consumer Privacy Act (CCPA)</a> and the <a href="https://gdpr.eu/" target="_blank" rel="noopener">General Data Protection Regulation (GDPR)</a>. This includes the right to access, rectify, or erase your data, and the right to object to processing. You may exercise these rights directly within the App's settings or by emailing our privacy officers.</p>
-    </div>
-
-    <div class="card">
-      <h2>8. Changes to this Policy</h2>
-      <p>We may modify this Privacy Policy periodically. If we make material changes, we will notify you via email or a prominent notice within the App prior to the changes taking effect. Continued use of the App constitutes acceptance of the revised policy.</p>
-      <p style="margin-top: 14px;">For any privacy-related concerns, please contact us at <a href="mailto:peaksocialsupport@gmail.com">peaksocialsupport@gmail.com</a>.</p>
-    </div>
-
-    <div class="eula-card">
-      <h3>Apple End User License Agreement (EULA)</h3>
-      <p style="font-size: 0.95rem; margin-bottom: 8px;">Peak Social is distributed under standard Apple App Store licensed application terms.</p>
-      <a href="eula.html" style="font-weight: 600;">Read the Apple EULA &rarr;</a>
-    </div>
+    <p style="margin-top: 24px;">
+      For any privacy-related concerns, please contact us at <a href="mailto:peaksocialsupport@gmail.com">peaksocialsupport@gmail.com</a>.
+    </p>
 
     <div class="footer">
-      <a href="index.html">&larr; Back to Support</a> &bull; 
-      <a href="terms.html">Terms of Service</a> &bull; 
-      <a href="eula.html">Apple EULA</a>
+      <p>&copy; 2026 Peak Social. All rights reserved.</p>
+      <p>
+        <a href="privacy.html">Privacy Policy</a> &bull;
+        <a href="terms.html">Terms of Service</a> &bull;
+        <a href="eula.html">Apple EULA</a> &bull;
+        <a href="index.html">Support</a>
+      </p>
     </div>
   </div>
 </body>
